@@ -6,7 +6,7 @@ const app = express();
 
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
 
-app.use(express.static('client/index.html'));
+app.use(express.static('public'));
 
 app.get("/api/check", async (req, res) => {
   if (!req.query.url) {
