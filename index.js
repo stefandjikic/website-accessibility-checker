@@ -16,3 +16,5 @@ app.get("/api/check", async (req, res) => {
     res.status(200).json(data);
   }
 });
+
+module.exports = app;
