@@ -16,3 +16,17 @@ On the frontend, it uses plain JavaScript and HTML to connect with the API and d
 - JavaScript
 - HTML
 - CSS
+
+### How to run
+
+1. Clone the repo
+2. Install packages
+```javascript
+  npm install
+```
+3. Run app:
+```javascript
+  npm start
+```
+4. Visit app:
+`localhost:2225`
