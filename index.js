@@ -6,7 +6,14 @@ const app = express();
 
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
 
-app.use(express.static("public"));
+var options = {
+  dotfiles: "ignore",
+  etag: false,
+  extensions: ["htm", "html", "css", "js", "ico", "jpg", "jpeg", "png", "svg"],
+  index: ["index.html"],
+  maxAge: "1m",
+  redirect: false,
+};
 
 app.get("/api/check", async (req, res) => {
   if (!req.query.url) {
@@ -21,3 +28,22 @@ app.get("/api/check", async (req, res) => {
     }
   }
 });
+
+app.use(express.static("public", options));
+
+app.use("*", (req, res) => {
+  res
+    .json({
+      at: new Date().toISOString(),
+      method: req.method,
+      hostname: req.hostname,
+      ip: req.ip,
+      query: req.query,
+      headers: req.headers,
+      cookies: req.cookies,
+      params: req.params,
+    })
+    .end();
+});
+
+module.exports = app;
