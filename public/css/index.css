@@ -4,6 +4,14 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
 .nav {
   background: #fcfcfc;
   display: flex;
@@ -20,12 +28,15 @@
 
 .flex-center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .url-input-wrapper {
   max-width: 700px;
+  margin-bottom: 40px;
+  padding: 0 16px;
 }
 
 .url-input-wrapper input {
@@ -35,4 +46,41 @@
 
 .url-input-wrapper button {
   height: 30px;
+}
+
+.results-wrapp {
+  max-width: 700px;
+  padding: 16px;
+  margin: auto;
+}
+
+.card {
+  border: 1px solid #eceaea;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.code {
+  margin: 10px 0;
+  padding: 16px;
+  background-color: #f8f6f6;
+  color: #353535;
+}
+
+.code-sm {
+  color: #353535;
+  font-size: 11px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #eceaea;
+}
+
+@media screen and (max-width: 500px) {
+  .url-input-wrapper input {
+    min-width: 100%;
+  }
+  .url-input-wrapper button {
+    margin-top: 10px;
+    width: 100%;
+  }
 }
